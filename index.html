@@ -20,18 +20,16 @@
 		<div ng-repeat="anuncio in anuncios" class="fundoLinhaAnuncio">
 			
 			
-			<div style="float:left;">
+			<div class="row">
 				
 				
-		   		{{anuncio.name}} |
-		   		
-		   		Valor Venda:  R${{anuncio.value}}
+		   		{{anuncio.name}} | Valor Venda:  R${{anuncio.value}}
 		   		<div ng-repeat="place in anuncio.place">
 			     	{{place.address}}
 			     	
 		   		</div>
-		   		<div ng-repeat="image in anuncio.images" class="imagensclass">
-			     	<img src="{{image.url}}" class="imageTam" class="posimage">
+		   		<div ng-repeat="image in anuncio.images">
+			     	<img src="{{image.url}}" class="col-xs-4 col-sm-3">
 			     	
 		   		</div>
 			</div>		
@@ -68,8 +66,15 @@
 		<hr/>
 		<form name="anuncioForm" >
 			<div class="anuncioform">
-				<input class="form-control" type="text" ng-model="anuncio.name" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10"/>
-				<input class="form-control" type="text" ng-model="anuncio.type" name="type" placeholder="Tipo" ng-required="true"/>
+				Novo Anuncio
+				<hr/>
+				<input class="form-control" type="text" ng-model="anuncio.name" name="nome" placeholder="Nome" ng-minlength="50"/>
+				<input class="form-control" type="text" ng-model="anuncio.contact" name="contato" placeholder="Contato" />
+				<input class="form-control" type="text" ng-model="anuncio.description" name="description" placeholder="Descrição" />
+				<input class="form-control" type="text" ng-model="anuncio.type" name="type" placeholder="Tipo" />
+				<input class="form-control" type="text" ng-model="anuncio.value" name="value" placeholder="Valor" />
+				<input class="form-control" type="text" ng-model="anuncio.place" name="place" placeholder="Lugar" />
+				<input class="form-control" type="text" ng-model="anuncio.images" name="imagem" placeholder="Imagem" />
 			</div>
 		</form>
 		<!--
@@ -86,7 +91,7 @@
 			Por favor, preencha o campo type!
 		</div>
 		-->
-		<button class="btn btn-primary btn-block" ng-click="adicionarContato(anuncio)">Adicionar Anuncio</button>
+		<button class="btn btn-primary btn-block" ng-click="adicionarAnuncio(anuncio)">Adicionar Anuncio</button>
 		<!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contatos</button>-->
 	</div>
 	<div style="text-align: center;">

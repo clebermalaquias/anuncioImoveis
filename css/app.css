@@ -25,14 +25,14 @@ hr {
 }
 
 .imageTam{
+	float: left;
+	clear: both;
 	width: 250px;
 	height:250px;
+	margin-top: 20px;
+	margin-bottom: 30px;
 }
-.posimage{
-	float: left;
-	margin-left: 0px;
-	
-}
+
 .fundoLinhaAnuncio{
 	float: left;
 	
@@ -41,6 +41,7 @@ hr {
 
 }
 .anuncioform{
+	top: 50px;
 	margin-top: 50px;
 	
 
@@ -50,5 +51,7 @@ hr {
 
 	float: left;
 	clear: both;
-	display: table-cell;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	width: 100%;
 }

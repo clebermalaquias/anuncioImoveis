@@ -17,7 +17,7 @@ angular.module("listaAnuncio").controller("listaAnuncioCtrl", function ($scope, 
 
 	$scope.adicionarAnuncio = function (anuncio) {
 		
-		anuncio.data = new Date();
+		
 		anuncioAPI.saveAnuncio(anuncio).success(function (data) {
 			delete $scope.anuncio;
 			$scope.anuncioForm.$setPristine();
@@ -25,15 +25,7 @@ angular.module("listaAnuncio").controller("listaAnuncioCtrl", function ($scope, 
 		});
 	};
 	
-	$scope.isAnuncioSelecionado = function (anuncios) {
-		return anuncios.some(function (anuncio) {
-			return anuncio.selecionado;
-		});
-	};
-	$scope.ordenarPor = function (campo) {
-		$scope.criterioDeOrdenacao = campo;
-		$scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
-	};
+	
 
 	carregarAnuncios();
 	

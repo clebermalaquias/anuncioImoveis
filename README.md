@@ -1,2 +1,2 @@
 # anuncioImoveis
-software de anuncio imoveis
+Site para anuncio de imóveis
