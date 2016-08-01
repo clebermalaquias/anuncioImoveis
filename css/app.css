@@ -1,0 +1,54 @@
+.jumbotron {
+	width: 800px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+h3 {
+	margin-bottom: 30px;
+}
+.table {
+	margin-top: 20px;
+}
+.form-control {
+	margin-bottom: 5px;
+}
+.selecionado {
+	background-color: yellow;
+}
+.negrito {
+	font-weight: bold;
+}
+hr {
+	border-color: #999;
+}
+
+.imageTam{
+	width: 250px;
+	height:250px;
+}
+.posimage{
+	float: left;
+	margin-left: 0px;
+	
+}
+.fundoLinhaAnuncio{
+	float: left;
+	
+	width: 800px;
+	text-align: left;
+
+}
+.anuncioform{
+	margin-top: 50px;
+	
+
+}
+
+.imagensclass{
+
+	float: left;
+	clear: both;
+	display: table-cell;
+}

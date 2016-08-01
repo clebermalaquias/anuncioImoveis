@@ -1,0 +1,97 @@
+<html ng-app="listaAnuncio">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista Anuncio</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-messages.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers/listaAnuncioCtrl.js"></script>
+	<script src="js/services/anunciosAPIService.js"></script>
+	
+	<script src="js/value/configValue.js"></script>
+</head>
+<body ng-controller="listaAnuncioCtrl">
+	<div class="jumbotron">
+		<h3>{{app}}</h3>
+		{{message}}
+		<!--<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>-->
+		<div ng-repeat="anuncio in anuncios" class="fundoLinhaAnuncio">
+			
+			
+			<div style="float:left;">
+				
+				
+		   		{{anuncio.name}} |
+		   		
+		   		Valor Venda:  R${{anuncio.value}}
+		   		<div ng-repeat="place in anuncio.place">
+			     	{{place.address}}
+			     	
+		   		</div>
+		   		<div ng-repeat="image in anuncio.images" class="imagensclass">
+			     	<img src="{{image.url}}" class="imageTam" class="posimage">
+			     	
+		   		</div>
+			</div>		
+					
+		</div>
+		<!--
+
+		<table  class="table table-striped" border="1">
+			<tr>
+				<th></th>
+				<th>ID</th>
+				<th>Name</th>
+				<th>imagem</th>
+				
+				
+			</tr>
+			<!--<tr ng-class="{'selecionado negrito': anuncio.selecionado}" ng-repeat="anuncio in anuncios | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">-->
+			<!--<tr>
+				<div ng-repeat="anuncio in anuncios">
+					<td><input type="checkbox" ng-model="anuncio.selecionado"/></td>
+					<td>{{anuncio.id}}</td>
+					<td>{{anuncio.name}}</td>
+					<td>
+						<div ng-repeat="image in anuncio.images" class="posimage">
+					     <img src="{{image.url}}" class="imageTam">
+					     {{image.desc}}
+				   		</div>
+					</td>
+					
+				</div>
+			</tr>
+		</table>
+	-->
+		<hr/>
+		<form name="anuncioForm" >
+			<div class="anuncioform">
+				<input class="form-control" type="text" ng-model="anuncio.name" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10"/>
+				<input class="form-control" type="text" ng-model="anuncio.type" name="type" placeholder="Tipo" ng-required="true"/>
+			</div>
+		</form>
+		<!--
+		<div ng-show="anuncioForm.nome.$dirty" ng-messages="anuncioForm.name.$error">
+			<div ng-message="required" class="alert alert-danger">
+				Por favor, preencha o campo nome!
+			</div>
+			<div ng-message="minlength" class="alert alert-danger">
+				O campo nome deve ter no mínimo 10 caracteres.
+			</div>
+		</div>
+
+		<div ng-show="anuncioForm.type.$error.required && anuncioForm.type.$dirty" class="alert alert-danger">
+			Por favor, preencha o campo type!
+		</div>
+		-->
+		<button class="btn btn-primary btn-block" ng-click="adicionarContato(anuncio)">Adicionar Anuncio</button>
+		<!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contatos</button>-->
+	</div>
+	<div style="text-align: center;">
+		Criado por Cleber Figueiredo
+	</div>
+</body>
+</html>
+
